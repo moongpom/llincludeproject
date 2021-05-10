@@ -1,0 +1,7 @@
+{% load crispy_forms_tags %}
+<form method="POST" enctype="multipart/form-data">
+  {% csrf_token%}
+  {{edit_post | crispy}}
+  <input class="btn btn-dark" type="submit" value="수정">
+</form>
+  

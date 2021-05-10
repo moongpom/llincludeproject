@@ -1,0 +1,9 @@
+{% load static %}
+<a href="{% url 'new' %}">New</a><br>
+<img src="{% static 'image1.jpeg' %}" alt="image1">
+{% for blog in blogs %}
+  {{blog.title}}<br>
+  {{blog.body}}<br>
+  {{blog.created_at}}<br>
+  <a href="{% url 'detail' blog.id %}">detail</a><br>
+{% endfor %}

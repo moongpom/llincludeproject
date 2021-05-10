@@ -1,0 +1,8 @@
+<form method="POST" action="{% url 'new'%}">
+  {% csrf_token%}
+  Title: <input type="text" class="form-control" name="title"><br>
+  Body:<br>
+  <textarea class="form-control" rows="5" name="body"></textarea><br>
+  <input class="btn btn-dark" type="submit" value="제출">
+</form>
+  

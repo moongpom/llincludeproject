@@ -1,0 +1,8 @@
+<form method="POST" >
+  {% csrf_token%}
+  Title: <input type="text" class="form-control" name="title" value="{{editblog.title}}"><br>
+  Body:<br>
+  <textarea class="form-control" rows="5" name="body">{{editblog.body}}</textarea><br>
+  <input class="btn btn-dark" type="submit" value="수정">
+</form>
+  

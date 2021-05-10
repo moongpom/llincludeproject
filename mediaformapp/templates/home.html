@@ -1,0 +1,8 @@
+<a href="{% url 'new' %}">New</a><br>
+{% for post in posts %}
+  {{post.title}}<br>
+  {{post.body}}<br>
+  <img src="{{post.image.url}}" width=100 height=100><br>
+  {{post.created_at}}<br>
+  <a href="{% url 'detail' post.id %}">detail</a><br>
+{% endfor %}
