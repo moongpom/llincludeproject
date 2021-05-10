@@ -11,4 +11,4 @@ class Post(models.Model):
     return self.title
 
   class Meta:
-    ordering = ['-created_at']
+    ordering = ['-created_at'] #최신글이 맨 위에 오도록 정렬
