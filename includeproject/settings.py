@@ -19,7 +19,7 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-CRISPY_TEMPLATE_PACK = 'bootstrap3'
+CRISPY_TEMPLATE_PACK = 'bootstrap3' #crispy
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -30,7 +30,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'staticapp.apps.StaticappConfig',
     'mediaformapp.apps.MediaformappConfig',
-    'crispy_forms',
+    'crispy_forms', #crispy
 ]
 
 MIDDLEWARE = [

@@ -1,6 +1,6 @@
 {{post.title}}<br>
-<img src="{{post.image.url}}" height="300" width="300"> 
-{{post.body}}<br>
+<img src="{{post.image.url}}" height="300" width="300"><br>
+{{post.content}}<br>
 {{post.created_at}}<br>
 <a href="{% url 'edit' post.id %}">edit</a>
 <a href="{% url 'delete' post.id %}">delete</a>
