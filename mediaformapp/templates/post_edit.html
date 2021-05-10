@@ -1,4 +1,4 @@
-{% load crispy_forms_tags %}
+{% load crispy_forms_tags %} <!--crispy사용하기위한 템플릿 태그-->
 <form method="POST" enctype="multipart/form-data">
   {% csrf_token%}
   {{edit_post | crispy}}
