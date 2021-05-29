@@ -1,9 +1,15 @@
 {% load static %}
-<a href="{% url 'new' %}">New</a><br>
+<!-- 1. static 파일들을 로드(상단에 명시해야함) -->
+<a href="{% url 'staticapp:new' %}">New</a><br>
+<!-- 2. 템플릿 태그로 staticapp의 new에 a태그를 걸었다-->
 <img src="{% static 'image1.jpeg' %}" alt="image1">
+<!-- 3.  static파일을 가져옴 -->
 {% for blog in blogs %}
+<!-- 4. views.py에서 넘겨받은 blogs 객체 목록을 하나씩 처리할 수 있도록함-->
   {{blog.title}}<br>
+  <!-- 5. blog.title 속성 -->
   {{blog.body}}<br>
   {{blog.created_at}}<br>
-  <a href="{% url 'detail' blog.id %}">detail</a><br>
+  <a href="{% url 'staticapp:detail' blog.id %}">detail</a><br>
+  <!-- 6. detail를 a태그로 연결한다 이때 detail에서 필요한 blog의 id도 같이보낸다(필요한 blog의 id값으로)) -->
 {% endfor %}

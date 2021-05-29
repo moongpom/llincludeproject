@@ -1,8 +1,7 @@
-<form method="POST" >
+<form method="POST">
   {% csrf_token%}
-  Title: <input type="text" class="form-control" name="title" value="{{editblog.title}}"><br>
-  Body:<br>
-  <textarea class="form-control" rows="5" name="body">{{editblog.body}}</textarea><br>
-  <input class="btn btn-dark" type="submit" value="수정">
+  Title: <input type="text" name="title" value="{{editblog.title}}"><br>
+<!-- 1.views.py를 통해 받아온 editblog의 title값을 value로 받음-->
+  Body:<br><textarea rows="5" name="body">{{editblog.body}}</textarea><br>
+  <input type="submit" value="수정">
 </form>
-  

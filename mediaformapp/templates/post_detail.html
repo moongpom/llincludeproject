@@ -1,7 +1,18 @@
-{{post.title}}<br>
-<img src="{{post.image.url}}" height="300" width="300"><br>
-{{post.content}}<br>
-{{post.created_at}}<br>
-<a href="{% url 'edit' post.id %}">edit</a>
-<a href="{% url 'delete' post.id %}">delete</a>
-<a href="{% url 'home' %}">home</a>
+{{post.title}}
+<!-- 1)detail 메소드에서 받아온 post의 title  -->
+<br>
+<img src="{{post.image.url}}" height="300" width="300">
+<!-- 2) 받아온 post의 image를 url과 함께 적어준다(이미지 자체를 보내는 것이 아님 url을 보내야함) -->
+<br>
+{{post.content}}
+<!-- 3) 받아온 post의  content출력 -->
+<br>
+{{post.created_at}}
+<!-- 4)받아온 post의 created_at 출력  -->
+<br>
+<a href="{% url 'mediaformapp:edit' post.id %}">edit</a>
+<!-- 5) edit를 a태그로 연결한다 이때 edit에서 필요한 post의 id도 같이보낸다(필요한 post의 id값으로)) -->
+<a href="{% url 'mediaformapp:delete' post.id %}">delete</a>
+<!-- 6) delete를 a태그로 연결한다 이때 delete에서 필요한 post의 id도 같이보낸다 -->
+<a href="{% url 'mediaformapp:home' %}">home</a>
+<!-- 7) home을 a태그로 연결한다-->

@@ -1,6 +1,6 @@
 {{blog.title}}
 {{blog.body}}
 {{blog.date}}
-<a href="{% url 'edit' blog.id %}">edit</a>
-<a href="{% url 'delete' blog.id %}">delete</a>
-<a href="{% url 'index' %}">home</a>
+<a href="{% url 'staticapp:edit' blog.id %}">edit</a>
+<a href="{% url 'staticapp:delete' blog.id %}">delete</a>
+<a href="{% url 'staticapp:index' %}">home</a>

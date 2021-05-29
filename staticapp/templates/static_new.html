@@ -1,8 +1,14 @@
-<form method="POST" action="{% url 'new'%}">
-  {% csrf_token%}
-  Title: <input type="text" class="form-control" name="title"><br>
-  Body:<br>
-  <textarea class="form-control" rows="5" name="body"></textarea><br>
-  <input class="btn btn-dark" type="submit" value="제출">
-</form>
-  
+<!-- forms.py를 사용하지 않은 경우 -->
+<form method="POST" action="{% url 'staticapp:new' %}">
+  <!-- 1. <form> 태그  method속성으로 전송방식을 택하고 (post 방식-url에 데이터 정보 미표시)
+     action 속성은 데이터를 보낼 곳의 url을 명시 
+  제출 버튼이 눌리면 staticapp앱의 new 이름을 가진 url 호출
+  new 이름을 가진 url은 view의 new 함수를 호출
+  -->
+    {% csrf_token%}
+    <!-- 2) POST로 format요청이 보내질 때 csrf-token(임의의 랜덤한 값)이 같이 보내지게 되면 
+    csrf-token값을 통해서csrf공격이 아니라는 걸 인식하여 공격에 대한 방지를 함 -->
+    Title: <input type="text" name="title"><br>
+    Body:<br><textarea rows="5" name="body"></textarea><br>
+    <input type="submit" value="제출">
+  </form>

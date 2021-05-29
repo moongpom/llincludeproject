@@ -1,7 +1,11 @@
-{% load crispy_forms_tags %} <!--crispy사용하기위한 템플릿 태그-->
+{% load crispy_forms_tags %}
+<!-- 1)  crispy_forms_tags를 로드한다-->
 <form method="POST" enctype="multipart/form-data">
   {% csrf_token%}
+  <!-- 2) format요청이 보내질 때 csrf-token(임의의 랜덤한 값)이 같이 보내지게 되면 
+    csrf-token값을 통해서csrf공격이 아니라는 걸 인식하여 공격에 대한 방지를 함 -->
   {{edit_post | crispy}}
+  <!-- 3) edit_post를 crispy 적용-->
   <input class="btn btn-dark" type="submit" value="수정">
 </form>
   

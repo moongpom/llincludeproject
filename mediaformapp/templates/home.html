@@ -1,8 +1,20 @@
-<a href="{% url 'new' %}">New</a><br>
+<a href="{% url 'mediaformapp:new' %}">New</a>
+<!-- 1)mediaformapp 네임스페이스를 가진 앱의 new로 연결한다.  -->
+<br>
 {% for post in posts %}
-  {{post.title}}<br>
-  {{post.body}}<br>
-  <img src="{{post.image.url}}" width=100 height=100><br>
-  {{post.created_at}}<br>
-  <a href="{% url 'detail' post.id %}">detail</a><br>
+<!-- 2) 템플릿 언어를 사용하여 받아온 posts를 post로 하나씩 받는다 -->
+<!--템플릿 언어 : (html에서 파이썬처럼 변수나 제어문 같은 문법을 사용하게 해줌)-->
+  {{post.title}}
+  <!-- 3) 받은 post의 title -->
+  <br>
+  <img src="{{post.image.url}}" width=100 height=100>
+  <!-- 4)받은 post의 image 이때 이미지 자체를 보내주는 것이 아니라 url을 보내주는 것이기 때문에 url도 같이 적어줘야함 -->
+  <br>
+  {{post.created_at}}
+  <!-- 5받은 post의 created_at출력  -->
+  <br>
+  <a href="{% url 'mediaformapp:detail' post.id %}">detail</a><!--https://blog.naver.com/plusinx00/222050885878-->
+  <!-- 6) detail을 a태그로 연결한다 이때 detail에서 필요한 post의 id도 같이보낸다 -->
+  <br><br>
 {% endfor %}
+<!-- 7)  템플릿언어 사용종료-->

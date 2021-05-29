@@ -1,6 +1,12 @@
-{% load crispy_forms_tags %} <!--crispy사용하기위한 템플릿 태그-->
+{% load crispy_forms_tags %}
+<!-- 1)  crispy_forms_tags를 로드한다-->
 <form method="POST" enctype="multipart/form-data">
   {% csrf_token %}
+  <!-- 2)  csrf-token값을 통해서csrf공격이 아니라는 걸 인식하여 공격에 대한 방지를 함 -->
   {{post_form | crispy}}
+  <!-- 3) post_form를 crispy 적용-->
   <input class="btn" type="submit" value="Done">
 </form>
+
+
+  
